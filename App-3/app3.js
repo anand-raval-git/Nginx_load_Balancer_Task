@@ -10,6 +10,6 @@ app.get('/', (req, res) => {
     `)
 })
 
-app.listen(3003, () => {
-    console.log('App3 running on port 3003')
+app.listen(3002, () => {
+    console.log('App3 running on port 3002')
 })
