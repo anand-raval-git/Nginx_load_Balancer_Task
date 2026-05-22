@@ -1,0 +1,33 @@
+version: '3'
+services:
+  app1:
+    image: anandraval12/backend_server_1
+    container_name: backend_server_1
+    networks: 
+      - loadbalancer
+    ports:
+      - "3000:3000"
+
+  app2:
+    image: anandraval12/backend_server_2
+    container_name: backend_server_2
+    networks:
+      - loadbalancer
+    ports:
+      - "3001:3001"
+  app3:
+    image: anandraval12/backend_server_3
+    container_name: backend_server_3
+    networks:
+      - loadbalancer
+    ports:
+      - "3002:3002"
+  nginx:
+    image: anandraval12/loadbalancing_anand
+    container_name: loadbalancing_anand
+    networks:
+      - loadbalancer
+    ports:
+      - "80:80"
+networks:
+  loadbalancer:
